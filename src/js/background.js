@@ -1,4 +1,4 @@
-importScripts("./utils.js");
+importScripts("utils.js");
 
 chrome.runtime.onInstalled.addListener(async () => {
   const settings = await getSettings();
