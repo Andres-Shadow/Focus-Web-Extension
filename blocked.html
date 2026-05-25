@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sitio bloqueado - Focus Blocker Pro</title>
+  <link rel="stylesheet" href="src/blocked.css">
+</head>
+<body>
+  <main class="block-shell">
+    <section class="challenge-panel">
+      <p class="eyebrow">Pausa consciente</p>
+      <h1 id="siteTitle">Sitio bloqueado</h1>
+      <p class="lede">Antes de entrar, resuelve el reto y escribe una intención concreta. La fricción existe para darte unos segundos de control.</p>
+
+      <div class="challenge-card">
+        <div>
+          <span class="label">Reto matemático</span>
+          <strong id="question">Cargando...</strong>
+        </div>
+        <div class="level-pill" id="levelPill">Nivel 1</div>
+      </div>
+
+      <div id="options" class="options" aria-label="Opciones de respuesta"></div>
+
+      <label class="intention">
+        <span>¿Para qué necesitas abrirlo?</span>
+        <textarea id="intentionInput" rows="3" maxlength="160" placeholder="Ej: ver un tutorial específico durante 10 minutos"></textarea>
+      </label>
+
+      <div class="actions">
+        <button id="unlockBtn" class="primary" disabled>Desbloquear temporalmente</button>
+        <button id="stayFocusedBtn" class="secondary">Volver a enfocarme</button>
+      </div>
+
+      <p id="feedback" class="feedback" role="status"></p>
+    </section>
+
+    <aside class="stats-panel">
+      <div>
+        <span class="label">Intentos bloqueados</span>
+        <strong id="attemptCount">0</strong>
+      </div>
+      <div>
+        <span class="label">Tiempo de desbloqueo</span>
+        <strong id="unlockTime">10m</strong>
+      </div>
+      <div>
+        <span class="label">Penalización</span>
+        <strong id="cooldownTime">0s</strong>
+      </div>
+    </aside>
+  </main>
+
+  <script src="src/utils.js"></script>
+  <script src="src/blocked.js"></script>
+</body>
+</html>

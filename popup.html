@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Focus Blocker Pro</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">Focus Blocker Pro</p>
+      <h1>Modo enfoque</h1>
+    </div>
+    <button id="openDashboard" class="icon-btn" title="Abrir dashboard">Panel</button>
+  </header>
+
+  <section class="status">
+    <div>
+      <span>Bloqueo global</span>
+      <strong id="globalState">Activo</strong>
+    </div>
+    <button id="toggleGlobal" class="switch" aria-label="Alternar bloqueo global"></button>
+  </section>
+
+  <section class="focus-session">
+    <label for="focusMinutes">Sesión estricta</label>
+    <div class="session-row">
+      <input id="focusMinutes" type="number" min="5" max="180" step="5" value="25">
+      <button id="startFocus">Iniciar</button>
+    </div>
+    <p id="focusStatus"></p>
+  </section>
+
+  <section class="add-site">
+    <label for="siteInput">Agregar sitio</label>
+    <div class="input-row">
+      <input id="siteInput" placeholder="youtube.com">
+      <button id="addSite">Agregar</button>
+    </div>
+    <button id="addCurrent" class="text-btn">Bloquear pestaña actual</button>
+  </section>
+
+  <section>
+    <div class="section-title">
+      <h2>Sitios bloqueados</h2>
+      <span id="siteCount">0</span>
+    </div>
+    <div id="sitesList" class="sites-list"></div>
+  </section>
+
+  <script src="src/utils.js"></script>
+  <script src="src/popup.js"></script>
+</body>
+</html>

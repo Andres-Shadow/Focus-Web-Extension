@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Focus Blocker Pro Dashboard</title>
+  <link rel="stylesheet" href="src/dashboard.css">
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <p class="eyebrow">Focus Blocker Pro</p>
+      <h1>Panel de concentración</h1>
+    </div>
+    <div class="header-actions">
+      <button id="exportData" class="secondary">Exportar</button>
+      <button id="resetStats" class="danger">Reiniciar métricas</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="metrics" aria-label="Métricas principales">
+      <article>
+        <span>Bloqueos totales</span>
+        <strong id="totalBlocks">0</strong>
+      </article>
+      <article>
+        <span>Sitios activos</span>
+        <strong id="activeSites">0</strong>
+      </article>
+      <article>
+        <span>Dificultad</span>
+        <strong id="difficultyMetric">3</strong>
+      </article>
+      <article>
+        <span>Desbloqueos</span>
+        <strong id="unlockMetric">0</strong>
+      </article>
+    </section>
+
+    <section class="panel settings-panel">
+      <div class="panel-title">
+        <h2>Configuración de fricción</h2>
+        <button id="saveSettings">Guardar</button>
+      </div>
+      <div class="settings-grid">
+        <label>
+          Bloqueo global
+          <select id="globalBlock">
+            <option value="true">Activo</option>
+            <option value="false">Pausado</option>
+          </select>
+        </label>
+        <label>
+          Dificultad base
+          <input id="challengeLevel" type="range" min="1" max="6" step="1">
+          <span id="challengeLevelLabel"></span>
+        </label>
+        <label>
+          Desbloqueo temporal
+          <input id="unlockMinutes" type="number" min="1" max="60">
+        </label>
+        <label>
+          Penalización por fallo
+          <input id="cooldownSeconds" type="number" min="0" max="180">
+        </label>
+        <label class="check-row">
+          <input id="requireIntention" type="checkbox">
+          Exigir intención escrita
+        </label>
+      </div>
+    </section>
+
+    <section class="panel sites-panel">
+      <div class="panel-title">
+        <h2>Lista de bloqueo</h2>
+        <div class="add-row">
+          <input id="siteInput" placeholder="dominio.com">
+          <button id="addSite">Agregar</button>
+        </div>
+      </div>
+      <div id="presets" class="presets"></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Dominio</th>
+              <th>Estado</th>
+              <th>Bloqueos</th>
+              <th>Desbloqueo</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="table"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="side-grid">
+      <article class="panel">
+        <h2>Actividad reciente</h2>
+        <div id="activity" class="activity-list"></div>
+      </article>
+      <article class="panel">
+        <h2>Intenciones escritas</h2>
+        <div id="intentions" class="activity-list"></div>
+      </article>
+    </section>
+  </main>
+
+  <script src="src/utils.js"></script>
+  <script src="src/dashboard.js"></script>
+</body>
+</html>
